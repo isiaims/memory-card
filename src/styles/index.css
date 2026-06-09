@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: black;
+}
+div#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    background-color: cornflowerblue;
+    color: aliceblue;
+}
+button {
+    cursor: pointer;
+    padding: 5px;
+    font-weight: bold;
+    place-self: center;
+    margin: 5px 0;
+}
+input, textarea {
+    padding: 5px;
+    border: 2px solid black;
+    font-size: 15px;
+}
+section {
+    width: 80%;
+    box-shadow: 2px 2px 2px grey;
+    background-color: white;
+}
+section > div:not(.personal), div.personal > h2,
+div.personal > div.details > *:not(hr) {
+    padding: 5px;
+}
+div.personal.submited {
+    background-color: brown;
+}
+div.personal.submited > h2 {
+    display: none;
+}
+div.details > div.user-name {
+    text-align: center;
+}
+div.contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+div.school, div.experience {
+    display: flex;
+    flex-direction: column;
+}
+div.details > button {
+    margin: 5px;
+}
+form {
+    display: grid;
+    row-gap: 10px;
+}
+div.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+section > div > div > * > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+input {
+    place-self: start;
+}
+div.summary {
+    background-color: white;
+}
+div.date {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+div.date > *:last-child {
+    place-self: end;
+}
+
+@media (min-width: 700px) {
+    section {
+        width: 60%;
+        max-width: 700px;
+    }
+}
+@media (min-width: 1024px) {
+    div.contact > p:nth-child(2) {
+        place-self: center;
+    }
+    div.contact > p:last-child {
+        place-self: end;
+    }
+}
